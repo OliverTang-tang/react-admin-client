@@ -5,7 +5,7 @@ import web3 from "./web3";
 import lottery from "./lottery";
 
 
-/*async function*/ class  App extends  Component{
+class  App extends  Component{
 
    state={manager:"",
          playersCounts:0,
