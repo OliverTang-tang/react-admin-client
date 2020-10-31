@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import {Message, Container, Card, Image, Icon, Statistic, Button, CardGroup,Label} from 'semantic-ui-react'
-import 'semantic-ui-css/semantic.min.css'
+
 import web3 from "./web3";
 import lottery from "./lottery";
+import {Button,message} from 'antd'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import Login from "./pages/login/login";
+import Admin from "./pages/admin/admin";
 
 
 class  App extends  Component{
@@ -59,54 +62,16 @@ class  App extends  Component{
         window.location.reload(true);
     };
 
+
+
     render (){
-        return(
-        console.log(web3.version),
-            <div>
-                <Container>
-                    <br/>
-                    <Message info>
-                        <Message.Header>区块链彩票项目</Message.Header>
-                        <p>以小博大，别墅靠海</p>
-                    </Message>
-                    <CardGroup>
-                        <Card>
-                            <Image src='/images/download.png' wrapped ui={false}/>
-                            <Card.Content>
-                                <Card.Header>六合彩</Card.Header>
-                                <Card.Meta>
-                                    <p>管理员地址:</p>
-                                    <Label size='mini'>
-                                        {this.state.manager}
-                                    </Label>
-                                    <span className='date'></span>
-                                </Card.Meta>
-                                <Card.Description>
-                                    每周三晚上8.准时开奖
-                                </Card.Description>
-                            </Card.Content>
-                            <Card.Content extra>
-                                <a>
-                                    <Icon name='user'/>
-                                   {this.state.playersCounts}
-                                </a>
-                            </Card.Content>
-                            <Card.Content extra>
-                                <Statistic color='red'>
-                                    <Statistic.Value>{this.state.balance} ether</Statistic.Value>
-                                </Statistic>
-                            </Card.Content>
-                            <Button animated='fade' onClick={this.enter}  loading={this.state.loading}  >
-                                <Button.Content visible>买定离手，未来可期</Button.Content>
-                                <Button.Content hidden>谨慎对待</Button.Content>
-                            </Button>
-                            <Button color='red' style={{display: this.state.showButton}} onClick={this.pickWinner}>开奖</Button>
-                            <Button color='orange' style={{display:this.state.showButton}}>退款</Button>
-                        </Card>
-                    </CardGroup>
-                </Container>
-            </div>
-        );}
+        return (<BrowserRouter>
+            <Switch>{/*只匹配其中的一个*/}
+            <Route path='/login' component={Login}></Route>
+            <Route path='/' component={Admin}/>
+            </Switch>
+        </BrowserRouter> );
+    }
 }
 
 export default App;
