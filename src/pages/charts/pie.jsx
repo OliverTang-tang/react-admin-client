@@ -8,7 +8,7 @@ import React, {Component} from 'react';
 export default class Pie extends Component {
     render() {
         return (
-            <div>Charts</div>
+            <div>Pie</div>
         );
     }
 }

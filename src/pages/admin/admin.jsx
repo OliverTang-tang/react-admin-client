@@ -32,7 +32,7 @@ export default class Admin extends Component {
                 <Sider><LeftNav/></Sider>
                 <Layout >
                     <Header>Header</Header>
-                    <Content style={{backgroundColor:'#fff'}}>
+                    <Content style={{margin:20 , backgroundColor:'#fff'}}>
                         <Switch>
                             <Route path='/home' component={Home}/>
                             <Route path='/category' component={Category}/>
@@ -41,7 +41,7 @@ export default class Admin extends Component {
                             <Route path='/user' component={Users}/>
                             <Route path='/charts/bar' component={Bar}/>
                             <Route path='/charts/line' component={Line}/>
-                            <Route path='/charts/line' component={Pie}/>
+                            <Route path='/charts/pie' component={Pie}/>
                             <Redirect to='/home'/>
                         </Switch>
                     </Content>

@@ -1,11 +1,15 @@
 import {
     AppstoreOutlined,
     MenuUnfoldOutlined,
-    MenuFoldOutlined,
+    TeamOutlined,
     PieChartOutlined,
-    DesktopOutlined,
-    ContainerOutlined,
-    MailOutlined,
+    UserOutlined,
+    DashboardOutlined,
+    BarChartOutlined,
+    LineChartOutlined,
+    TransactionOutlined,
+    WalletOutlined,
+    NotificationOutlined
 } from '@ant-design/icons';
 import React from "react";
 
@@ -18,30 +22,52 @@ const menuConfig=[
     {
         title:'交易',
         key:'/products',
-        icon: <PieChartOutlined/>,
+        icon: <TransactionOutlined />,
         children:[
             {
                 title:'品类管理',
-                key:'/product',
-                icon:  <MenuUnfoldOutlined/>
+                key:'/category',
+                icon: <NotificationOutlined />
             },
             {
                 title:'商品管理',
-                key:'/category',
-                icon: <MenuUnfoldOutlined/>
-            }
+                key:'/product',
+                icon: <WalletOutlined />
+            },
         ]
     },
     {
         title:'用户管理',
         key:'/user',
-        icon: <MenuUnfoldOutlined/>
+        icon: <UserOutlined />
     },
     {
         title:'角色管理',
         key:'/role',
-        icon: <MenuUnfoldOutlined/>
+        icon: <TeamOutlined />
     },
+    {
+        title:'图形展示',
+        key:'/charts',
+        icon: <DashboardOutlined />,
+        children:[
+            {
+                title:'饼图',
+                key:'/charts/pie',
+                icon:  <PieChartOutlined/>
+            },
+            {
+                title:'折线图',
+                key:'/charts/line',
+                icon: <LineChartOutlined />
+            },
+            {
+                title:'圆柱图',
+                key:'/charts/bar',
+                icon: <BarChartOutlined />
+            }
+        ]
+    }
 ]
 
 export default menuConfig
